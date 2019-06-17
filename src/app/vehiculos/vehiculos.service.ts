@@ -25,7 +25,8 @@ export class VehiculosService {
 
     }
 
-    create(vehiculo : Vehiculos) : Observable<Vehiculos>{      
+    create(vehiculo : Vehiculos) : Observable<Vehiculos>{
+      console.log("saber fecha............" +  vehiculo.fechaini);
       return this.http.post<Vehiculos>(this.urlcreate,  vehiculo , { headers :this.httpHeader})
     }
 }
