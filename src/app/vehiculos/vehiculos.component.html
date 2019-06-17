@@ -1,0 +1,23 @@
+<tr> </tr>
+<div class="card border-primary mb-3">
+  <div class="card-header">Lista de Vehiculos</div>
+  <div class="card-body text-primary">
+
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Placa</th>
+          <th>Tipo Vehiculo</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let vehiculo of vehiculos" class="text-center">
+          <th>{{vehiculo.placa}}</th>
+          <th>{{vehiculo.tipovehiculo}}</th>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
