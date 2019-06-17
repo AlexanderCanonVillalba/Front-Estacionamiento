@@ -25,8 +25,7 @@ export class VehiculosService {
 
     }
 
-    create(vehiculo : Vehiculos) : Observable<Vehiculos>{
-      console.log("en el servicioo.........." + vehiculo.placa);
+    create(vehiculo : Vehiculos) : Observable<Vehiculos>{      
       return this.http.post<Vehiculos>(this.urlcreate,  vehiculo , { headers :this.httpHeader})
     }
 }

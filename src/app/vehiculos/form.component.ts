@@ -17,8 +17,7 @@ export class FormComponent implements OnInit {
   ngOnInit() {
   }
 
-  public create() : void{
-    console.log("holaaaaaa");
+  public create() : void{    
       this.vehiculosService.create(this.vehiculo).subscribe(
         response => this.router.navigate(["/listar"])
       )

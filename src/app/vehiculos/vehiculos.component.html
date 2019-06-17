@@ -6,13 +6,15 @@
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th>Placa</th>
-          <th>Tipo Vehiculo</th>
+          <th>ID</th>
+          <th>PLACA</th>
+          <th>TIPO VEHICULO</th>
         </tr>
       </thead>
       <tbody>
 
         <tr *ngFor="let vehiculo of vehiculos" class="text-center">
+          <th>{{vehiculo.id}}</th>
           <th>{{vehiculo.placa}}</th>
           <th>{{vehiculo.tipovehiculo}}</th>
 
