@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Vehiculos } from './vehiculos';
 import { VEHICULOS } from './vehiculos.json';
-import { of , Observable } from 'rxjs';
+import { of , Observable , throwError } from 'rxjs';
 import {HttpClient , HttpHeaders} from '@angular/common/http';
-import {map} from 'rxjs/operators';
+import {map , catchError} from 'rxjs/operators';
+import swal from 'sweetalert2';
 
 
 
@@ -14,8 +15,8 @@ import {map} from 'rxjs/operators';
 export class VehiculosService {
 
   private httpHeader = new HttpHeaders({'Content-type' : 'Application/json'})
-  private url:string = 'http://localhost:8083/estacionamiento/api/listavehiculos';
-  private urlcreate : string  = "http://localhost:8083/estacionamiento/api/registrarvehiculo";
+  private url = 'http://localhost:8083/estacionamiento/api/listavehiculos';
+  private urlcreate = "http://localhost:8083/estacionamiento/api/registrarvehiculo";
 
   constructor(private http : HttpClient) { }
 
@@ -26,7 +27,14 @@ export class VehiculosService {
     }
 
     create(vehiculo : Vehiculos) : Observable<Vehiculos>{
+      swal.fire(  'Se ha regitsrado correctamente!',  '',  'success');
       console.log("saber fecha............" +  vehiculo.fechaini);
-      return this.http.post<Vehiculos>(this.urlcreate,  vehiculo , { headers :this.httpHeader})
+      return this.http.post<Vehiculos>(this.urlcreate,  vehiculo ).pipe(
+
+        catchError( e => {
+          swal.fire('error' ,  e.error.mensaje , 'error');
+          return throwError(e);
+        })
+      );
     }
 }

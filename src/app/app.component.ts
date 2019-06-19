@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-root',
@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'estacionamiento-app';
 
-  vehiculos : string =  'Estacionamiento'
-  
+  vehiculos =  'Estacionamiento'
+
 
 constructor(private router : Router){}
 
