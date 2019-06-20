@@ -3,6 +3,7 @@
   <div class="card-header">Lista de Vehiculos</div>
   <div class="card-body text-primary">
 
+
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
@@ -11,15 +12,23 @@
           <th>TIPO VEHICULO</th>
           <th>FECHA DE INGRESO</th>
 
+
         </tr>
       </thead>
       <tbody>
 
-        <tr *ngFor="let vehiculo of vehiculos" class="text-center">
-          <th>{{vehiculo.id}}</th>
+        <tr *ngFor="let vehiculo of vehiculos"  class="text-center">
+
+          <th>{{vehiculo.id}}
+            </th>
           <th>{{vehiculo.placa}}</th>
           <th>{{vehiculo.tipovehiculo}}</th>
           <th>{{vehiculo.fechaini |date: "fullDate" }} - {{vehiculo.horaini}}  </th>
+          <td>
+            <button type="button" name = "eliminar"(click)="salida(vehiculo)"> Salida</button>
+
+      </td>
+
         </tr>
       </tbody>
     </table>

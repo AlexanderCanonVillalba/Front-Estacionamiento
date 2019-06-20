@@ -21,4 +21,6 @@ Listar(){
   Entrada(){
       this.router.navigate(["entrada"]);
   }
+
+
 }

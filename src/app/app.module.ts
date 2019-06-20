@@ -9,11 +9,13 @@ import { VehiculosService } from './vehiculos/vehiculos.service';
 import { Routes, RouterModule } from '@angular/router';
 import { FormComponent } from './vehiculos/form.component';
 import { FormsModule } from '@angular/forms';
+import { FormSalidasComponent } from './vehiculos/form-salidas.component';
 
 
 const routes: Routes = [
   {path:'listar', component:VehiculosComponent} ,
   {path:'entrada', component:FormComponent} ,
+  {path:'salida', component:FormSalidasComponent} ,
 
 ];
 
@@ -22,7 +24,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     VehiculosComponent,
-    FormComponent
+    FormComponent,
+    FormSalidasComponent
   ],
   imports: [
     BrowserModule,

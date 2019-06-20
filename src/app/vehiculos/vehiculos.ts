@@ -5,5 +5,6 @@ export class Vehiculos {
    tipovehiculo : string ;
    fechaini :  Date;
    horaini  : string ;
-
+   fechafin : Date ;
+   precio : number =  0;
 }
